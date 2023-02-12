@@ -1,9 +1,16 @@
 # Browser extension: Show data attributes
 
-Show or hide attributes: `data-cy` + `data-testid`
 
 ![ninja-hidden](img/icon_64_hide.png)
 ![ninja-visible](img/icon_64_show.png)
+
+Show data attributes on page:
+
+1. `data-cy`
+2. `data-test`
+3. `data-testid`
+4. `data-testing`
+5. `data-qa`
 
 ## LEARN
 
