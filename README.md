@@ -1,10 +1,11 @@
-# Browser extension: Show data attributes
+# Chrome extension 'Show data attributes for testing'
 
+Chrome extensions for developers and testers who want to easily see data attributes for testing directly on the page.
 
 ![ninja-hidden](img/icon_64_hide.png)
 ![ninja-visible](img/icon_64_show.png)
 
-Show data attributes on page:
+Extension can show data attributes:
 
 1. `data-cy`
 2. `data-test`
@@ -30,6 +31,7 @@ Show data attributes on page:
 - allow COPY from element on hover
 - add box to COPY all attributes + values AND copy only values
 - show below attributes with `null` missing the value `""`
+- add TEST page
 
 target data:
 
