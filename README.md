@@ -10,8 +10,9 @@ Extension can show data attributes:
 1. `data-cy`
 2. `data-test`
 3. `data-testid`
-4. `data-testing`
-5. `data-qa`
+4. `data-test-id`
+5. `data-testing`
+6. `data-qa`
 
 ## LEARN
 
@@ -38,8 +39,9 @@ target data:
 1. `data-cy`
 2. `data-test`
 3. `data-testid`
-4. `data-testing`
-5. `data-qa`
+4. `data-test-id`
+5. `data-testing`
+6. `data-qa`
 
 ## chrome update
 
