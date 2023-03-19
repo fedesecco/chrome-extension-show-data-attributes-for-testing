@@ -13,6 +13,10 @@ Extension can show data attributes:
 5. `data-testing`
 6. `data-qa`
 
+## Testing page on JS Bin
+
+- <https://output.jsbin.com/xutihow>
+
 ## Attribution
 
 Icons used [Ninja pack](https://www.flaticon.com/packs/ninja-11)
