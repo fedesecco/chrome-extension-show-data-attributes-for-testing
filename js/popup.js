@@ -71,7 +71,6 @@ const removeAttributesFromPage = () => {
 elButtonShow.addEventListener('click', () => {
   changeImgToVisible()
   showAttributesOnPage()
-  console.log('clicked SHOW')
 })
 
 elButtonRemove.addEventListener('click', () => {
