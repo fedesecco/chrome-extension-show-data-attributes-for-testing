@@ -38,8 +38,8 @@
 }
 
 html {
-    height: 100%;
     box-sizing: border-box;
+    height: 100%;
 }
 
 *,
@@ -63,25 +63,25 @@ ul {
 }
 
 body {
+    background-color: var(--gray-light);
     font-family: 'Poppins', sans-serif;
     font-size: var(--font-size-2);
-    background-color: var(--gray-light);
-    width: 510px;
     padding: var(--space-2);
+    width: 510px;
 }
 
 a,
 a:visited {
     color: var(--blue-400);
-    text-decoration: underline;
     font-weight: var(--font-weight-2);
+    text-decoration: underline;
 }
 
 a:active,
 a:hover,
 a:focus {
-    text-decoration: none;
     outline: none;
+    text-decoration: none;
 }
 
 a:focus {
@@ -90,10 +90,10 @@ a:focus {
 
 main {
     background-color: var(--white);
-    box-shadow: var(--shadow-1);
     border-radius: var(--radius-1);
-    padding: var(--space-2);
+    box-shadow: var(--shadow-1);
     margin-bottom: var(--space-2);
+    padding: var(--space-2);
 }
 
 .flex {
@@ -111,16 +111,16 @@ main {
 
 .buttons {
     display: flex;
-    margin: var(--space-2) 0 0 0;
     height: 32px;
+    margin: var(--space-2) 0 0 0;
 }
 
 button {
+    border: none;
+    border-radius: var(--radius-0);
     cursor: pointer;
     padding: 4px 8px;
     width: 50%;
-    border: none;
-    border-radius: var(--radius-0);
 }
 
 button:focus {
@@ -128,9 +128,9 @@ button:focus {
 }
 
 .show {
-    color: var(--white);
-    border: 2px solid var(--green-light);
     background-color: var(--green-dark);
+    border: 2px solid var(--green-light);
+    color: var(--white);
     margin-right: var(--space-1);
 }
 
@@ -139,9 +139,9 @@ button:focus {
 }
 
 .hide {
-    color: var(--white);
-    border: 2px solid var(--red-light);
     background-color: var(--red-dark);
+    border: 2px solid var(--red-light);
+    color: var(--white);
 }
 
 .hide:hover {
@@ -153,8 +153,8 @@ button:focus {
 }
 
 footer {
-    display: flex;
     align-items: center;
+    display: flex;
     font-size: var(--font-size-1);
 }
 
@@ -163,11 +163,11 @@ footer {
 }
 
 code {
-    font-family: monospace;
     background: var(--gray-light);
     border: 1px solid var(--gray-dark);
-    color: var(--black);
-    padding: 2px 4px;
-    font-size: small;
     border-radius: var(--radius-0);
+    color: var(--black);
+    font-family: monospace;
+    font-size: small;
+    padding: 2px 4px;
 }

@@ -1,29 +1,29 @@
 .attr-bg {
-  border: 1px dotted #000000!important;
   background-color: #9b59b6;
+  border: 1px dotted #000000 !important;
 }
 
 .attr-box {
-  z-index: 9998;
-  position: absolute;
-  left: 0;
-  top: 0;
   background-color: #f1c40f;
-  color:  #000000;
   border: 1px dashed #000000;
-  padding: 4px 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  min-width: 200px;
-  max-width: 300px;
-  cursor: pointer;
-  transition: all .4s;
-  font-size: 10px;
   border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #000000;
+  cursor: pointer;
+  font-size: 10px;
+  left: 0;
+  max-width: 300px;
+  min-width: 200px;
+  padding: 4px 8px;
+  position: absolute;
+  top: 0;
+  transition: all 0.4s;
+  z-index: 9998;
 }
 
 .attr-box:hover {
   background-color: #f39c12;
-  z-index: 99991;
-  left: 16px;
   font-weight: bold;
+  left: 16px;
+  z-index: 99991;
 }

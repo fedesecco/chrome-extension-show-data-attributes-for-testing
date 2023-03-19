@@ -2,8 +2,7 @@
 
 Chrome extensions for developers and testers who want to easily see data attributes for testing directly on the page.
 
-![ninja-hidden](img/icon_64_hide.png)
-![ninja-visible](img/icon_64_show.png)
+![ninja-hidden](img/icon_64_hide.png) ![ninja-visible](img/icon_64_show.png)
 
 Extension can show data attributes:
 
@@ -27,7 +26,7 @@ Extension can show data attributes:
 
 ## TODO
 
-- update JavaScript with regex *(have it in notes in chat)*
+- update JavaScript with regex _(have it in notes in chat)_
 - redesign the look and update CSS
 - allow COPY from element on hover
 - add box to COPY all attributes + values AND copy only values
@@ -53,4 +52,4 @@ Icons used: [Ninja pack](https://www.flaticon.com/packs/ninja-11)
 
 ---
 
-Copyright (c) 2021 | [krsiak.cz](https://krsiak.cz/) 
+Copyright (c) 2021 | [krsiak.cz](https://krsiak.cz/)
