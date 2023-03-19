@@ -1,45 +1,62 @@
-var dataAttrs = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
-var selectAllDataAttrs = document.querySelectorAll(dataAttrs)
-var divs = document.getElementsByTagName('DIV') // TODO: can be other things than just DIVs
+var dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
+var selectAllDataAttributes = document.querySelectorAll(dataAttributes)
 
-for (let i = 0; i < selectAllDataAttrs.length; i++) {
-  let d = selectAllDataAttrs[i]
-  tDataCy = d.getAttribute('data-cy')
-  tDataTestId = d.getAttribute('data-testid')
+for (let i = 0; i < selectAllDataAttributes.length; i++) {
+  let data = selectAllDataAttributes[i]
 
-  let boxText
-  if (tDataCy) {
-    boxText = tDataCy
+  textDataCy = data.getAttribute('data-cy')
+  textDataTest = data.getAttribute('data-test')
+  textDataTestId = data.getAttribute('data-testid')
+  textDataTestDashId = data.getAttribute('data-test-id')
+  textDataTesting = data.getAttribute('data-testing')
+  textDataQa = data.getAttribute('data-qa')
+
+  let textInBox
+
+  if (textDataCy) {
+    textInBox = textDataCy
   }
-  if (tDataTestId) {
-    boxText = tDataTestId
+  if (textDataTest) {
+    textInBox = textDataTest
+  }
+  if (textDataTestId) {
+    textInBox = textDataTestId
+  }
+  if (textDataTestDashId) {
+    textInBox = textDataTestDashId
+  }
+  if (textDataTesting) {
+    textInBox = textDataTesting
+  }
+  if (textDataQa) {
+    textInBox = textDataQa
   }
 
   // positioning
-  let attrBox = `<div class="attribute-box">${boxText}</div>`
+  let attributeBox = `<div class="attribute-box">${textInBox}</div>`
   const elements = ['SELECT', 'TEXTAREA', 'INPUT', 'BUTTON', 'SPAN']
-  d.style.position = 'relative'
-  d.parentElement.style.position = 'relative'
-  d.className += ' attribute-bg'
+  data.style.position = 'relative'
+  data.parentElement.style.position = 'relative'
+  data.className += ' attribute-bg'
 
-  if (elements.indexOf(d.tagName) !== -1) {
-    d.insertAdjacentHTML('afterend', attrBox)
+  if (elements.indexOf(data.tagName) !== -1) {
+    data.insertAdjacentHTML('afterend', attributeBox)
   } else {
-    d.insertAdjacentHTML('afterbegin', attrBox)
+    data.insertAdjacentHTML('afterbegin', attributeBox)
   }
 }
 
 // TEST NEW CODE
 // use regex to get the testing attributes like 'data-' = data-cy, data-test, data-testing, data-testid, data-qa
 var allElements = document.querySelectorAll('*')
-var resultArr = []
+var resultArray = []
 
 allElements.forEach((element) => {
-  for (const [key, value] of Object.entries(element.dataset)) {
+  for (const [key] of Object.entries(element.dataset)) {
     if (/(cy|test|testid|test-id|testing|qa)/.test(key)) {
-      resultArr.push(element)
+      resultArray.push(element)
     }
   }
 })
 
-console.log(resultArr)
+console.log(resultArray)

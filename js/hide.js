@@ -1,19 +1,23 @@
-const ATTRIBUTE_BOX_CLASS = '.attribute-box'
+const ATTRIBUTE_BOX = '.attribute-box'
+const ATTRIBUTE_BACKGROUND = 'attribute-bg'
 
-var selectAllAttrBoxes = document.querySelectorAll(ATTRIBUTE_BOX_CLASS)
-var dataAttrs = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
-var divs = document.getElementsByTagName('DIV')
-var selectAllDataAttrs = document.querySelectorAll(dataAttrs)
+const selectAllDataAttributeBoxes = document.querySelectorAll(ATTRIBUTE_BOX)
+const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
+const selectAllDataAttributes = document.querySelectorAll(dataAttributes)
 
-for (let i = 0; i < selectAllDataAttrs.length; i++) {
-  let d = selectAllDataAttrs[i]
-  d.style.position = ''
-  d.parentElement.style.position = ''
-  d.classList.remove('attr-bg')
-}
+// Loop over all elements with data attributes and remove inline styles and the "attr-bg" class
+selectAllDataAttributes.forEach((attribute) => {
+  attribute.style.position = ''
+  attribute.parentElement.style.position = ''
+  attribute.classList.remove(ATTRIBUTE_BACKGROUND)
+})
 
-for (let i = 0; i < selectAllAttrBoxes.length; i++) {
-  selectAllAttrBoxes[i].parentNode.removeChild(selectAllAttrBoxes[i])
-}
+// Remove all elements with the "ATTRIBUTE_BOX" class from the DOM
+selectAllDataAttributeBoxes.forEach((box) => {
+  box.parentNode.removeChild(box)
+})
 
-;[].forEach.call(selectAllAttrBoxes, (e) => e.classList.remove(ATTRIBUTE_BOX_CLASS))
+// Remove the "ATTRIBUTE_BOX" class from all elements that have it
+selectAllDataAttributeBoxes.forEach((box) => {
+  box.classList.remove(ATTRIBUTE_BOX)
+})

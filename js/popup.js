@@ -1,13 +1,14 @@
-const found = document.getElementById('found')
+const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
 
-const textAttrsHidden = 'Attributes: 0'
+const textAttributesHidden = 'Attributes: 0'
 const textHide = 'HIDE'
-const tHiding = 'Hiding...'
-const tNoAttrsFound = 'No attributes found.'
-const tShow = 'SHOW'
-const tShowing = 'Showing...'
+const textHiding = 'Hiding...'
+const textNoAttributesFound = 'No attributes found.'
+const textShow = 'SHOW'
+const textShowing = 'Showing...'
 
-found.innerHTML = textAttrsHidden
+const found = document.getElementById('found')
+found.innerHTML = textAttributesHidden
 
 const getImg = document.getElementById('img-ninja')
 
@@ -17,7 +18,7 @@ document.getElementById('show').addEventListener('click', changeImgToShow)
 const changeImgToHide = () => (getImg.src = '/img/ninja-hide.svg')
 document.getElementById('hide').addEventListener('click', changeImgToHide)
 
-const numberOfAttrsFound = () => document.querySelectorAll('[data-cy], [data-testid]').length
+const numberOfAttributesFound = () => document.querySelectorAll(dataAttributes).length
 
 const show = () => {
   chrome.tabs.insertCSS({ file: 'css/attributes.css' })
@@ -25,16 +26,16 @@ const show = () => {
   chrome.tabs.executeScript(null, { file: '/js/show.js' })
 
   const btnShow = document.getElementById('show')
-  btnShow.innerHTML = tShowing
+  btnShow.innerHTML = textShowing
   setTimeout(() => {
-    btnShow.innerHTML = tShow
+    btnShow.innerHTML = textShow
   }, 500)
 
-  chrome.tabs.executeScript(null, { code: `(${numberOfAttrsFound})()` }, (results) => {
+  chrome.tabs.executeScript(null, { code: `(${numberOfAttributesFound})()` }, (results) => {
     if (results && results[0] > 0) {
       found.innerHTML = `Attributes: ${results[0]}`
     } else {
-      found.innerHTML = tNoAttrsFound
+      found.innerHTML = textNoAttributesFound
     }
   })
   return false
@@ -42,10 +43,10 @@ const show = () => {
 
 const hide = () => {
   chrome.tabs.executeScript(null, { file: '/js/hide.js' })
-  found.innerHTML = textAttrsHidden
+  found.innerHTML = textAttributesHidden
 
   const btnHide = document.getElementById('hide')
-  btnHide.innerHTML = tHiding
+  btnHide.innerHTML = textHiding
   setTimeout(() => {
     btnHide.innerHTML = textHide
   }, 500)
