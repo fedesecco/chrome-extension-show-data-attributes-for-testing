@@ -1,4 +1,4 @@
-var dataAttrs = '[data-cy], [data-testid], [data-test-id]'
+var dataAttrs = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
 var selectAllDataAttrs = document.querySelectorAll(dataAttrs)
 var divs = document.getElementsByTagName('DIV') // TODO: can be other things than just DIVs
 
@@ -16,11 +16,11 @@ for (let i = 0; i < selectAllDataAttrs.length; i++) {
   }
 
   // positioning
-  let attrBox = `<div class="attr-box">${boxText}</div>`
+  let attrBox = `<div class="attribute-box">${boxText}</div>`
   const elements = ['SELECT', 'TEXTAREA', 'INPUT', 'BUTTON', 'SPAN']
   d.style.position = 'relative'
   d.parentElement.style.position = 'relative'
-  d.className += ' attr-bg'
+  d.className += ' attribute-bg'
 
   if (elements.indexOf(d.tagName) !== -1) {
     d.insertAdjacentHTML('afterend', attrBox)
@@ -36,7 +36,7 @@ var resultArr = []
 
 allElements.forEach((element) => {
   for (const [key, value] of Object.entries(element.dataset)) {
-    if (/(cy|test|testid|testing|qa)/.test(key)) {
+    if (/(cy|test|testid|test-id|testing|qa)/.test(key)) {
       resultArr.push(element)
     }
   }

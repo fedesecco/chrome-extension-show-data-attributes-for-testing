@@ -1,13 +1,13 @@
 const found = document.getElementById('found')
 
-const tAttrsHidden = 'Attributes: 0'
-const tHide = 'HIDE'
+const textAttrsHidden = 'Attributes: 0'
+const textHide = 'HIDE'
 const tHiding = 'Hiding...'
 const tNoAttrsFound = 'No attributes found.'
 const tShow = 'SHOW'
 const tShowing = 'Showing...'
 
-found.innerHTML = tAttrsHidden
+found.innerHTML = textAttrsHidden
 
 const getImg = document.getElementById('img-ninja')
 
@@ -42,12 +42,12 @@ const show = () => {
 
 const hide = () => {
   chrome.tabs.executeScript(null, { file: '/js/hide.js' })
-  found.innerHTML = tAttrsHidden
+  found.innerHTML = textAttrsHidden
 
   const btnHide = document.getElementById('hide')
   btnHide.innerHTML = tHiding
   setTimeout(() => {
-    btnHide.innerHTML = tHide
+    btnHide.innerHTML = textHide
   }, 500)
 }
 

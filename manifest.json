@@ -1,8 +1,8 @@
 {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-  "name": "Show data attributes",
-  "description": "Show data attributes on your page.",
+  "name": "Show data attributes for testing",
+  "description": "Show data attributes on your page for easier testing.",
   "version": "0.0.1",
   "manifest_version": 2,
   "permissions": ["activeTab"],

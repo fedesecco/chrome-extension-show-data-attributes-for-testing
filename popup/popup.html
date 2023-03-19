@@ -2,33 +2,80 @@
 <html lang="en">
 
 <head>
-    <title>Show data attributes</title>
+    <title>Show data attributes for testing</title>
     <meta charset="UTF-8">
     <meta name="author" content="Krsiak Daniel">
     <meta name="description" content="Browser Extension: Show data attributes on your page.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <link rel="stylesheet" href="/css/popup.css">
 
 <body>
     <div class="container">
         <main>
-            <div class="flex">
-                <img src="/img/ninja-hide.svg" width="64px" alt="ninja" class="img-ninja" id="img-ninja" />
-                <div class="info">
-                    <h1 id="found" class="found"></h1>
-                    <p>Show or hide attributes: <code>data-cy</code> + <code>data-testid</code></p>
+            <div>
+                <div class="flex">
+                    <div>
+                        <img src="/img/ninja-hide.svg" width="64px" alt="ninja" class="img-ninja" id="img-ninja" />
+                    </div>
+                    <div class="info">
+                        <h1 id="found" class="found"></h1>
+                        <p>For now checkboxes are predifined.</p>
+                    </div>
                 </div>
+
+                <fieldset>
+                    <legend>Attributes to display:</legend>
+                    <div class="checkboxes">
+                        <div>
+                            <input type="checkbox" name="attribute-data-cy" id="attribute-data-cy" checked disabled />
+                            <label for="attribute-data-cy">data-cy</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="attribute-data-test" id="attribute-data-test" checked
+                                disabled />
+                            <label for="attribute-data-test">data-test</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="attribute-data-testid" id="attribute-data-testid" checked
+                                disabled />
+                            <label for="attribute-data-testid">data-testid</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="attribute-data-test-id" id="attribute-data-test-id" checked
+                                disabled />
+                            <label for="attribute-data-test-id">data-test-id</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="attribute-data-testing" id="attribute-data-testing" checked
+                                disabled />
+                            <label for="attribute-data-testing">data-testing</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="attribute-data-qa" id="attribute-data-qa" checked disabled />
+                            <label for="attribute-data-qa">data-qa</label>
+                        </div>
+                    </div>
+                </fieldset>
+
             </div>
-            <div class="buttons">
+            <div class="flex buttons">
                 <button id="show" class="show">SHOW</button>
                 <button id="hide" class="hide">HIDE</button>
             </div>
         </main>
+
         <footer>
             <img src="/img/logo-developer.svg" width="16px" alt="logo-developer" class="logo-developer" />
             <p>
-                Made by <a href="https://krsiak.cz/" target="_blank">krsiak.cz</a>
+                Made by <a href="https://krsiak.cz/" target="_blank" rel="noopener">krsiak.cz</a>
             </p>
         </footer>
     </div>

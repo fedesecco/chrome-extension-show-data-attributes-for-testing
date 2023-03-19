@@ -1,9 +1,9 @@
-.attr-bg {
+.attribute-bg {
   background-color: #9b59b6;
   border: 1px dotted #000000 !important;
 }
 
-.attr-box {
+.attribute-box {
   background-color: #f1c40f;
   border: 1px dashed #000000;
   border-radius: 8px;
@@ -21,7 +21,7 @@
   z-index: 9998;
 }
 
-.attr-box:hover {
+.attribute-box:hover {
   background-color: #f39c12;
   font-weight: bold;
   left: 16px;
