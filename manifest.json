@@ -1,18 +1,24 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
+  "manifest_version": 3,
   "name": "Show data attributes for testing",
-  "description": "Show data attributes on your page for easier testing.",
-  "version": "0.0.2",
-  "manifest_version": 2,
-  "permissions": ["activeTab"],
-  "icons": {
-    "32": "img/ninja-hidden-32.png",
-    "128": "img/ninja-hidden-128.png"
-  },
-  "browser_action": {
+  "version": "3.0.0", 
+
+  "action": {
     "default_title": "Show data attributes for testing",
     "default_icon": "img/ninja-hidden-32.png",
     "default_popup": "popup/popup.html"
-  }
+  },
+  "default_locale": "en",
+  "description": "Show data attributes on your page for easier testing.",
+  "icons": {
+    "16": "img/ninja-hidden-16.png",
+    "32": "img/ninja-hidden-32.png",
+    "48": "img/ninja-hidden-48.png",
+    "128": "img/ninja-hidden-128.png"
+  },
+  
+  "author": "https://github.com/krsiakdaniel",
+  "permissions": ["activeTab", "scripting"],
+  "update_url": "https://clients2.google.com/service/update2/crx"
+
 }

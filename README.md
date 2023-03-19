@@ -19,29 +19,32 @@ Extension can show following attributes:
 
 - <https://output.jsbin.com/xutihow>
 
+## Developer
+
+Made by [krsiak.cz](https://krsiak.cz/)
+
 ## Attribution
 
 Icons used [Ninja pack](https://www.flaticon.com/packs/ninja-11)
 
-## Developer
+## `TODO - test autoupdate URL if works`
 
-Made by [krsiak.cz](https://krsiak.cz/)
+- <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#update_url>
+- <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#testing>
 
 ## `TODO - Chrome MANIFEST version update`
 
 - **upgrade MANIFEST to version 3**: <https://developer.chrome.com/docs/extensions/mv3/intro/>
 - **MIGRATION**: <https://developer.chrome.com/docs/extensions/mv3/mv3-migration/>
-
-## `TODO - TESTING`
-
-- create testing page with few examples for each data attribute type
-- test on random web pages:
-  - `data-cy`: <https://filiphric.com/cypress-basics-check-attributes-value-and-text>
-  - `data-test`: <https://www.rohlik.cz/vitejte>
+- read: <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#register-listeners>
+- local storage <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#persist-states>
+- setTimeout = to timers Alarm <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#convert-timers>
+- <https://developer.chrome.com/docs/extensions/reference/action/#badge>
+- <https://developer.chrome.com/docs/extensions/reference/action/#injecting-a-content-script-on-click>
 
 ## `TODO - General stuff`
 
-- update JavaScript with regex _(have it in notes in chat)_
+- update JavaScript with regex
 - redesign the look and update CSS
 - allow COPY from element on hover
 - add box to COPY all attributes + values AND copy only values
