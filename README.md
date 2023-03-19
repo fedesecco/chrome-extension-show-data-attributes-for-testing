@@ -2,9 +2,11 @@
 
 Chrome extensions for developers and testers. Show data attributes on your page for easier testing.
 
-![ninja-hidden](img/ninja-hidden-64.png) ![ninja-visible](img/ninja-visible-64.png)
+![preview](preview.png)
 
-Extension can show data attributes:
+## Show data attributes for testing
+
+Extension can show following attributes:
 
 1. `data-cy`
 2. `data-test`
