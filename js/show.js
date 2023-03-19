@@ -1,62 +1,46 @@
-var dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
-var selectAllDataAttributes = document.querySelectorAll(dataAttributes)
+const ATTRIBUTE_BACKGROUND_CLASS = 'attribute-background'
 
-for (let i = 0; i < selectAllDataAttributes.length; i++) {
-  let data = selectAllDataAttributes[i]
+const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
+const selectAllDataAttributes = document.querySelectorAll(dataAttributes)
 
-  textDataCy = data.getAttribute('data-cy')
-  textDataTest = data.getAttribute('data-test')
-  textDataTestId = data.getAttribute('data-testid')
-  textDataTestDashId = data.getAttribute('data-test-id')
-  textDataTesting = data.getAttribute('data-testing')
-  textDataQa = data.getAttribute('data-qa')
+// Loop over all elements with data attributes and create an "attribute-box" element for each one
+selectAllDataAttributes.forEach((data) => {
+  const textDataCy = data.getAttribute('data-cy')
+  const textDataTest = data.getAttribute('data-test')
+  const textDataTestId = data.getAttribute('data-testid')
+  const textDataTestIdWithDash = data.getAttribute('data-test-id')
+  const textDataTesting = data.getAttribute('data-testing')
+  const textDataQa = data.getAttribute('data-qa')
 
-  let textInBox
+  const textInBox =
+    textDataCy || textDataTest || textDataTestId || textDataTestIdWithDash || textDataTesting || textDataQa
 
-  if (textDataCy) {
-    textInBox = textDataCy
-  }
-  if (textDataTest) {
-    textInBox = textDataTest
-  }
-  if (textDataTestId) {
-    textInBox = textDataTestId
-  }
-  if (textDataTestDashId) {
-    textInBox = textDataTestDashId
-  }
-  if (textDataTesting) {
-    textInBox = textDataTesting
-  }
-  if (textDataQa) {
-    textInBox = textDataQa
-  }
+  const attributeBox = `<div class="attribute-box">${textInBox}</div>`
+  const elements = ['BUTTON', 'INPUT', 'SELECT', 'SPAN', 'TEXTAREA']
 
-  // positioning
-  let attributeBox = `<div class="attribute-box">${textInBox}</div>`
-  const elements = ['SELECT', 'TEXTAREA', 'INPUT', 'BUTTON', 'SPAN']
   data.style.position = 'relative'
   data.parentElement.style.position = 'relative'
-  data.className += ' attribute-bg'
+  data.classList.add(ATTRIBUTE_BACKGROUND_CLASS)
 
-  if (elements.indexOf(data.tagName) !== -1) {
+  if (elements.includes(data.tagName)) {
     data.insertAdjacentHTML('afterend', attributeBox)
   } else {
     data.insertAdjacentHTML('afterbegin', attributeBox)
   }
-}
-
-// TEST NEW CODE
-// use regex to get the testing attributes like 'data-' = data-cy, data-test, data-testing, data-testid, data-qa
-var allElements = document.querySelectorAll('*')
-var resultArray = []
-
-allElements.forEach((element) => {
-  for (const [key] of Object.entries(element.dataset)) {
-    if (/(cy|test|testid|test-id|testing|qa)/.test(key)) {
-      resultArray.push(element)
-    }
-  }
 })
 
-console.log(resultArray)
+// Find all elements with data attributes matching a certain pattern and log them to the console
+const dataAttributePattern = /(cy|test|testid|test-id|testing|qa)/
+const allElements = document.querySelectorAll('*')
+const matchingElements = []
+
+allElements.forEach((element) => {
+  Object.keys(element.dataset).forEach((key) => {
+    if (dataAttributePattern.test(key)) {
+      matchingElements.push(element)
+    }
+  })
+})
+
+// TODO: remove when not needed
+console.log(matchingElements)

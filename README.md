@@ -1,8 +1,8 @@
 # Chrome extension 'Show data attributes for testing'
 
-Chrome extensions for developers and testers who want to easily see data attributes for testing directly on the page.
+Chrome extensions for developers and testers. Show data attributes on your page for easier testing.
 
-![ninja-hidden](img/icon_64_hide.png) ![ninja-visible](img/icon_64_show.png)
+![ninja-hidden](img/ninja-hidden-64.png) ![ninja-visible](img/ninja-visible-64.png)
 
 Extension can show data attributes:
 
@@ -13,18 +13,27 @@ Extension can show data attributes:
 5. `data-testing`
 6. `data-qa`
 
-## LEARN
+## Attribution
 
-- test other extensions
-- download + unpack to learn from code
-- implement what is needed
+Icons used [Ninja pack](https://www.flaticon.com/packs/ninja-11)
 
-## PAGES
+## Developer
 
-- `data-cy`: <https://filiphric.com/cypress-basics-check-attributes-value-and-text>
-- `data-test`: <https://www.rohlik.cz/vitejte>
+Made by [krsiak.cz](https://krsiak.cz/)
 
-## TODO
+## `TODO - Chrome MANIFEST version update`
+
+- **upgrade MANIFEST to version 3**: <https://developer.chrome.com/docs/extensions/mv3/intro/>
+- **MIGRATION**: <https://developer.chrome.com/docs/extensions/mv3/mv3-migration/>
+
+## `TODO - TESTING`
+
+- create testing page with few examples for each data attribute type
+- test on random web pages:
+  - `data-cy`: <https://filiphric.com/cypress-basics-check-attributes-value-and-text>
+  - `data-test`: <https://www.rohlik.cz/vitejte>
+
+## `TODO - General stuff`
 
 - update JavaScript with regex _(have it in notes in chat)_
 - redesign the look and update CSS
@@ -33,23 +42,8 @@ Extension can show data attributes:
 - show below attributes with `null` missing the value `""`
 - add TEST page
 
-target data:
+## `TODO - Learn`
 
-1. `data-cy`
-2. `data-test`
-3. `data-testid`
-4. `data-test-id`
-5. `data-testing`
-6. `data-qa`
-
-## chrome update
-
-<https://developer.chrome.com/docs/extensions/mv3/mv3-migration/>
-
-## Attribution
-
-Icons used: [Ninja pack](https://www.flaticon.com/packs/ninja-11)
-
----
-
-Copyright (c) 2021 | [krsiak.cz](https://krsiak.cz/)
+- test other extensions
+- download + unpack to learn from code
+- implement what is needed

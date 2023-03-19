@@ -1,56 +1,80 @@
-const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
+// Constants
+const ID_BUTTON_SHOW = 'show'
+const ID_BUTTON_REMOVE = 'remove'
+const ID_ATTRIBUTES_COUNTER = 'attributes-counter'
+const IMG_NINJA = 'img-ninja'
 
-const textAttributesHidden = 'Attributes: 0'
-const textHide = 'HIDE'
-const textHiding = 'Hiding...'
+// Texts
+const textNumberOfAttributes = '0'
+const textRemove = 'REMOVE'
+const textRemoving = 'Removing...'
 const textNoAttributesFound = 'No attributes found.'
 const textShow = 'SHOW'
 const textShowing = 'Showing...'
 
-const found = document.getElementById('found')
-found.innerHTML = textAttributesHidden
+// Attributes set
+const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
 
-const getImg = document.getElementById('img-ninja')
+// Get elements on page
+const elButtonShow = document.getElementById(ID_BUTTON_SHOW)
+const elButtonRemove = document.getElementById(ID_BUTTON_REMOVE)
 
-const changeImgToShow = () => (getImg.src = '/img/ninja-show.svg')
-document.getElementById('show').addEventListener('click', changeImgToShow)
+const attributesCounter = document.getElementById(ID_ATTRIBUTES_COUNTER)
+attributesCounter.innerHTML = textNumberOfAttributes
 
-const changeImgToHide = () => (getImg.src = '/img/ninja-hide.svg')
-document.getElementById('hide').addEventListener('click', changeImgToHide)
+// Get image
+const getImg = document.getElementById(IMG_NINJA)
 
+const changeImgToVisible = () => {
+  getImg.src = '/img/ninja-visible.svg'
+}
+
+const changeImgToHidden = () => {
+  getImg.src = '/img/ninja-hidden.svg'
+}
+
+// Attributes on page
 const numberOfAttributesFound = () => document.querySelectorAll(dataAttributes).length
 
-const show = () => {
+// Show attributes
+const showAttributesOnPage = () => {
   chrome.tabs.insertCSS({ file: 'css/attributes.css' })
-  chrome.tabs.executeScript(null, { file: '/js/hide.js' })
   chrome.tabs.executeScript(null, { file: '/js/show.js' })
-
-  const btnShow = document.getElementById('show')
-  btnShow.innerHTML = textShowing
-  setTimeout(() => {
-    btnShow.innerHTML = textShow
-  }, 500)
 
   chrome.tabs.executeScript(null, { code: `(${numberOfAttributesFound})()` }, (results) => {
     if (results && results[0] > 0) {
-      found.innerHTML = `Attributes: ${results[0]}`
+      attributesCounter.innerHTML = results[0]
     } else {
-      found.innerHTML = textNoAttributesFound
+      attributesCounter.innerHTML = textNoAttributesFound
     }
   })
-  return false
-}
 
-const hide = () => {
-  chrome.tabs.executeScript(null, { file: '/js/hide.js' })
-  found.innerHTML = textAttributesHidden
-
-  const btnHide = document.getElementById('hide')
-  btnHide.innerHTML = textHiding
+  elButtonShow.innerHTML = textShowing // pretend loader
   setTimeout(() => {
-    btnHide.innerHTML = textHide
+    elButtonShow.innerHTML = textShow
   }, 500)
 }
 
-document.getElementById('show').addEventListener('click', show)
-document.getElementById('hide').addEventListener('click', hide)
+// Remove attributes
+const removeAttributesFromPage = () => {
+  chrome.tabs.executeScript(null, { file: '/js/remove.js' })
+
+  attributesCounter.innerHTML = textNumberOfAttributes
+
+  elButtonRemove.innerHTML = textRemoving // pretend loader
+  setTimeout(() => {
+    elButtonRemove.innerHTML = textRemove
+  }, 500)
+}
+
+// Handle buttons
+elButtonShow.addEventListener('click', () => {
+  changeImgToVisible()
+  showAttributesOnPage()
+  console.log('clicked SHOW')
+})
+
+elButtonRemove.addEventListener('click', () => {
+  changeImgToHidden()
+  removeAttributesFromPage()
+})

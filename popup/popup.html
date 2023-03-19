@@ -5,7 +5,7 @@
     <title>Show data attributes for testing</title>
     <meta charset="UTF-8">
     <meta name="author" content="Krsiak Daniel">
-    <meta name="description" content="Browser Extension: Show data attributes on your page.">
+    <meta name="description" content="Browser Extension: Show data attributes on your page for easier testing.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
@@ -18,10 +18,13 @@
             <div>
                 <div class="flex">
                     <div>
-                        <img src="/img/ninja-hide.svg" width="64px" alt="ninja" class="img-ninja" id="img-ninja" />
+                        <img src="/img/ninja-hidden.svg" width="64px" alt="img-ninja" class="img-ninja"
+                            id="img-ninja" />
                     </div>
                     <div class="info">
-                        <h1 id="found" class="found"></h1>
+                        <h1 id="title" class="title">
+                            Attributes: <span id="attributes-counter"></span>
+                        </h1>
                         <p>For now checkboxes are predifined.</p>
                     </div>
                 </div>
@@ -68,7 +71,7 @@
             </div>
             <div class="flex buttons">
                 <button id="show" class="show">SHOW</button>
-                <button id="hide" class="hide">HIDE</button>
+                <button id="remove" class="remove">REMOVE</button>
             </div>
         </main>
 

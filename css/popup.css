@@ -93,12 +93,14 @@ main {
   border-radius: var(--radius-1);
   box-shadow: var(--shadow-1);
   padding: var(--space-2);
+  min-height: 352px;
 }
 
 ul {
   padding-left: 32px;
 }
 
+/* utility classes */
 .flex {
   display: flex;
 }
@@ -111,8 +113,13 @@ ul {
   flex-direction: row;
 }
 
+/* header */
 .img-ninja {
   margin-right: var(--space-2);
+}
+
+.title {
+  color: var(--black);
 }
 
 .info p {
@@ -120,16 +127,18 @@ ul {
   font-size: small;
 }
 
-.buttons {
-  height: 32px;
-  margin: var(--space-2) 0 0 0;
-}
-
+/* form */
 fieldset {
   background-color: var(--gray-light);
   border: var(--border-1-dashed);
   border-radius: var(--radius-1);
   margin-top: 16px;
+}
+
+/* buttons */
+.buttons {
+  height: 32px;
+  margin: var(--space-2) 0 0 0;
 }
 
 button {
@@ -155,16 +164,17 @@ button:focus {
   background-color: var(--green-light);
 }
 
-.hide {
+.remove {
   background-color: var(--red-dark);
   border: 2px solid var(--red-light);
   color: var(--white);
 }
 
-.hide:hover {
+.remove:hover {
   background-color: var(--red-light);
 }
 
+/* footer  */
 footer {
   align-items: center;
   display: flex;
@@ -176,6 +186,7 @@ footer {
   margin-right: var(--space-0);
 }
 
+/* misc */
 code {
   background: var(--gray-light);
   border: 1px solid var(--gray-dark);
