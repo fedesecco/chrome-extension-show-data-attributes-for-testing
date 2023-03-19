@@ -27,14 +27,20 @@ Made by [krsiak.cz](https://krsiak.cz/)
 
 Icons used [Ninja pack](https://www.flaticon.com/packs/ninja-11)
 
-## `TODO - test autoupdate URL if works`
+## Package.json
 
-- <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#update_url>
-- <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#testing>
+Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types) to take advantage of auto-completion for the Chrome API in Manifest version 3.
 
 ## `TODO - exercise, create 3 new extensions in new repos`
 
 - <https://developer.chrome.com/docs/extensions/mv3/getstarted/extensions-101/>
+- improve content structure
+- TypeScript isntall <https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#types>
+
+## `TODO - test autoupdate URL if works`
+
+- <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#update_url>
+- <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#testing>
 
 ## `TODO - Chrome MANIFEST version update`
 
