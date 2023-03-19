@@ -67,8 +67,18 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-size-2);
   padding: var(--space-2);
-  width: 510px;
+  min-width: 320px; /* TODO: test sizes which are OK */
+  max-width: 480px;
 }
+
+/* TODO: make responsive buttons BASE column, MS row */
+/* breakpoint - SM 480px */
+@media screen and (min-width: 480px) {
+  body {
+    background-color: yellow;
+  }
+}
+
 
 a,
 a:visited {
