@@ -32,6 +32,10 @@ Icons used [Ninja pack](https://www.flaticon.com/packs/ninja-11)
 - <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#update_url>
 - <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#testing>
 
+## `TODO - exercise, create 3 new extensions in new repos`
+
+- <https://developer.chrome.com/docs/extensions/mv3/getstarted/extensions-101/>
+
 ## `TODO - Chrome MANIFEST version update`
 
 - **upgrade MANIFEST to version 3**: <https://developer.chrome.com/docs/extensions/mv3/intro/>
