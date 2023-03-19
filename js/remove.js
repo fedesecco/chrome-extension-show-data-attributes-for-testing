@@ -1,10 +1,11 @@
-const ATTRIBUTE_BOX_CLASS = '.attribute-box'
+const ATTRIBUTE_BOX_IN_DOM = '.attribute-box'
+const ATTRIBUTE_BOX_CLASS = 'attribute-box'
 const ATTRIBUTE_BACKGROUND_CLASS = 'attribute-background'
 
 const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
 const selectAllDataAttributes = document.querySelectorAll(dataAttributes)
 
-const selectAllDataAttributeBoxes = document.querySelectorAll(ATTRIBUTE_BOX_CLASS)
+const selectAllDataAttributeBoxes = document.querySelectorAll(ATTRIBUTE_BOX_IN_DOM)
 
 // Loop over all elements with data attributes and remove inline styles and the "attr-bg" class
 selectAllDataAttributes.forEach((attribute) => {
