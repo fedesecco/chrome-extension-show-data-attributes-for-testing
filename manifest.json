@@ -11,7 +11,6 @@
     },
     "default_popup": "popup/popup.html"
   },
-  "default_locale": "en",
   "description": "Show data attributes on your page for easier testing.",
   "icons": {
     "16": "img/ninja-hidden-16.png",
