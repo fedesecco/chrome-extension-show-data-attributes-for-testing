@@ -38,9 +38,9 @@ const numberOfAttributesFound = () => document.querySelectorAll(dataAttributes).
 
 // Show attributes
 const showAttributesOnPage = () => {
-  chrome.scripting.insertCSS({ files: ['css/attributes-on-page.css'] })
+  chrome.scripting.insertCSS({ files: ['sattributes-on-page.css'] })
 
-  chrome.scripting.executeScript(null, { files: ['/js/show.js'] })
+  chrome.scripting.executeScript(null, { files: ['../scripts/show-attributes.js'] })
 
   chrome.scripting.executeScript(null, { code: `(${numberOfAttributesFound})()` }, (results) => {
     if (results && results[0] > 0) {
@@ -58,7 +58,7 @@ const showAttributesOnPage = () => {
 
 // Remove attributes
 const removeAttributesFromPage = () => {
-  chrome.scripting.executeScript(null, { files: ['/js/remove.js'] })
+  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] })
 
   attributesCounter.innerHTML = textNumberOfAttributes
 

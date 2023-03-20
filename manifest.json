@@ -5,7 +5,10 @@
 
   "action": {
     "default_title": "Show data attributes for testing",
-    "default_icon": "img/ninja-hidden-32.png",
+    "default_icon": {
+      "16": "img/ninja-hidden-16.png",
+      "32": "img/ninja-hidden-32.png"
+    },
     "default_popup": "popup/popup.html"
   },
   "default_locale": "en",

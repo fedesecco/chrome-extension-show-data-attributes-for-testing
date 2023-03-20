@@ -142,7 +142,8 @@ fieldset {
   background-color: var(--gray-light);
   border: var(--border-1-dashed);
   border-radius: var(--radius-1);
-  margin-top: 16px;
+  margin: 16px 0 0 0;
+  padding: 4px 16px 8px;
 }
 
 /* buttons */

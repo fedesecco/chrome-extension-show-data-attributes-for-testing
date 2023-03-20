@@ -31,11 +31,26 @@ Icons used [Ninja pack](https://www.flaticon.com/packs/ninja-11)
 
 Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types) to take advantage of auto-completion for the Chrome API in Manifest version 3.
 
+## `TODO - UI design`
+
+- badge state: <https://developer.chrome.com/docs/extensions/mv3/user_interface/#badge>
+- info: <https://developer.chrome.com/docs/extensions/mv3/user_interface/>
+
 ## `TODO - exercise, create 3 new extensions in new repos`
 
 - <https://developer.chrome.com/docs/extensions/mv3/getstarted/extensions-101/>
 - improve content structure
 - TypeScript isntall <https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#types>
+
+## `TODO - options page`
+
+- create OPTIONS PAGE: <https://developer.chrome.com/docs/extensions/mv3/options/>
+
+## `TODO - recreate extension in REACT + with TS`
+
+- create separate project to test it first
+- <https://blog.logrocket.com/creating-chrome-extension-react-typescript/>
+- <https://betterprogramming.pub/creating-chrome-extensions-with-typescript-914873467b65>
 
 ## `TODO - test autoupdate URL if works`
 
