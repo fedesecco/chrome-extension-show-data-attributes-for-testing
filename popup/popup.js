@@ -38,7 +38,7 @@ const numberOfAttributesFound = () => document.querySelectorAll(dataAttributes).
 
 // Show attributes
 const showAttributesOnPage = () => {
-  chrome.scripting.insertCSS({ files: ['sattributes-on-page.css'] })
+  chrome.scripting.insertCSS({ files: ['attributes-on-page.css'] })
 
   chrome.scripting.executeScript(null, { files: ['../scripts/show-attributes.js'] })
 

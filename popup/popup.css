@@ -69,9 +69,8 @@ body {
   background-color: var(--gray-light);
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-size-2);
-  min-width: 350px;
-  max-width: 500px;
   padding: var(--space-2);
+  width: 480px;
 }
 
 a,
