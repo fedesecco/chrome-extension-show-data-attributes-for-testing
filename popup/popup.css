@@ -15,7 +15,7 @@
   --blue-300: #1e5d87;
   --blue-400: #2f68c4;
   --blue-500: #5071a1;
-  --space-0: 4px;
+  --space-half: 4px;
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -35,8 +35,9 @@
   --font-weight-1: 400;
   --font-weight-2: 700;
   --shadow-1: rgba(0, 0, 0, 0.16) 0 1px 4px;
-  --border-4: 4px solid var(--white);
-  --border-1-dashed: 1px dashed var(--gray-dark);
+  --border-1: 1px solid;
+  --border-2: 2px solid;
+  --border-1-dashed: 1px dashed;
 }
 
 html {
@@ -68,9 +69,9 @@ body {
   background-color: var(--gray-light);
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-size-2);
-  padding: var(--space-2);
-  min-width: 300px;
   max-width: 500px;
+  min-width: 300px;
+  padding: var(--space-2);
 }
 
 a,
@@ -108,8 +109,8 @@ header {
 }
 
 .title {
-  font-size: var(--font-size-3);
   color: var(--black);
+  font-size: var(--font-size-3);
 }
 
 .info {
@@ -120,14 +121,10 @@ header {
 /* form */
 fieldset {
   background-color: var(--gray-light);
-  border: var(--border-1-dashed);
+  border: var(--border-1-dashed) var(--gray-dark);
   border-radius: var(--radius-1);
-  margin: 16px 0 0 0;
-  padding: 4px 16px 8px;
-}
-
-ul {
-  padding-left: 32px;
+  margin: var(--space-2) 0 0 0;
+  padding: var(--space-half) var(--space-2) var(--space-1);
 }
 
 /* buttons */
@@ -140,58 +137,58 @@ ul {
 button {
   border: none;
   border-radius: var(--radius-0);
-  cursor: pointer;
-  padding: 4px 8px;
-  width: 100%;
   color: var(--white);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  width: 100%;
 }
 
 button:focus {
   outline: none;
 }
 
-.show {
-  border: 2px solid var(--green-dark);
+.show-attributes {
   background-color: var(--green-dark);
+  border: var(--border-2) var(--green-dark);
   margin-bottom: var(--space-1);
 }
 
-.show:hover {
-  border-color: var(--green-light);
+.show-attributes:hover {
   background-color: var(--green-light);
+  border-color: var(--green-light);
 }
 
-.remove {
-  border: 2px solid var(--red-dark);
+.remove-attributes {
   background-color: var(--red-dark);
+  border: var(--border-2) var(--red-dark);
 }
 
-.remove:hover {
-  border-color: var(--red-light);
+.remove-attributes:hover {
   background-color: var(--red-light);
+  border-color: var(--red-light);
 }
 
 /* footer  */
 footer {
-  display: flex;
   align-items: center;
+  display: flex;
   font-size: var(--font-size-1);
   margin-top: var(--space-2);
 }
 
 .logo-developer {
-  margin-right: var(--space-0);
+  margin-right: var(--space-half);
 }
 
 /* misc */
 code {
   background: var(--gray-light);
-  border: 1px solid var(--gray-dark);
+  border: var(--border-1) var(--gray-dark);
   border-radius: var(--radius-0);
   color: var(--black);
   font-family: monospace;
   font-size: small;
-  padding: 2px 4px;
+  padding: var(--space-half) var(--space-1);
 }
 
 /* breakpoint - SM */
@@ -204,8 +201,8 @@ code {
     flex-direction: row;
   }
   
-  .show {
-    margin-right: var(--space-1);
+  .show-attributes {
     margin-bottom: 0;
+    margin-right: var(--space-1);
   }
 }
