@@ -30,6 +30,8 @@
   --radius-1: 8px;
   --font-size-1: 12px;
   --font-size-2: 16px;
+  --font-size-3: 24px;
+  --font-size-4: 32px;
   --font-weight-1: 400;
   --font-weight-2: 700;
   --shadow-1: rgba(0, 0, 0, 0.16) 0 1px 4px;
@@ -67,18 +69,9 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-size-2);
   padding: var(--space-2);
-  min-width: 320px; /* TODO: test sizes which are OK */
-  max-width: 480px;
+  min-width: 300px;
+  max-width: 500px;
 }
-
-/* TODO: make responsive buttons BASE column, MS row */
-/* breakpoint - SM 480px */
-@media screen and (min-width: 480px) {
-  body {
-    background-color: yellow;
-  }
-}
-
 
 a,
 a:visited {
@@ -103,36 +96,23 @@ main {
   border-radius: var(--radius-1);
   box-shadow: var(--shadow-1);
   padding: var(--space-2);
-  min-height: 352px;
-}
-
-ul {
-  padding-left: 32px;
-}
-
-/* utility classes */
-.flex {
-  display: flex;
-}
-
-.flex-direction-column {
-  flex-direction: column;
-}
-
-.flex-direction-row {
-  flex-direction: row;
 }
 
 /* header */
+header {
+  display: flex;
+}
+
 .img-ninja {
   margin-right: var(--space-2);
 }
 
 .title {
+  font-size: var(--font-size-3);
   color: var(--black);
 }
 
-.info p {
+.info {
   color: var(--gray-dark);
   font-size: small;
 }
@@ -146,9 +126,14 @@ fieldset {
   padding: 4px 16px 8px;
 }
 
+ul {
+  padding-left: 32px;
+}
+
 /* buttons */
 .buttons {
-  height: 32px;
+  display: flex;
+  flex-direction: column;
   margin: var(--space-2) 0 0 0;
 }
 
@@ -157,7 +142,8 @@ button {
   border-radius: var(--radius-0);
   cursor: pointer;
   padding: 4px 8px;
-  width: 50%;
+  width: 100%;
+  color: var(--white);
 }
 
 button:focus {
@@ -165,30 +151,30 @@ button:focus {
 }
 
 .show {
+  border: 2px solid var(--green-dark);
   background-color: var(--green-dark);
-  border: 2px solid var(--green-light);
-  color: var(--white);
-  margin-right: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .show:hover {
+  border-color: var(--green-light);
   background-color: var(--green-light);
 }
 
 .remove {
+  border: 2px solid var(--red-dark);
   background-color: var(--red-dark);
-  border: 2px solid var(--red-light);
-  color: var(--white);
 }
 
 .remove:hover {
+  border-color: var(--red-light);
   background-color: var(--red-light);
 }
 
 /* footer  */
 footer {
-  align-items: center;
   display: flex;
+  align-items: center;
   font-size: var(--font-size-1);
   margin-top: var(--space-2);
 }
@@ -206,4 +192,24 @@ code {
   font-family: monospace;
   font-size: small;
   padding: 2px 4px;
+}
+
+/* breakpoint - SM */
+@media screen and (min-width: 480px) {
+  body {
+    background-color: yellow;
+  }
+
+  .title {
+    font-size: var(--font-size-4);
+  }
+
+  .buttons {
+    flex-direction: row;
+  }
+  
+  .show {
+    margin-right: var(--space-1);
+    margin-bottom: 0;
+  }
 }
