@@ -196,10 +196,6 @@ code {
 
 /* breakpoint - SM */
 @media screen and (min-width: 480px) {
-  body {
-    background-color: yellow;
-  }
-
   .title {
     font-size: var(--font-size-4);
   }
