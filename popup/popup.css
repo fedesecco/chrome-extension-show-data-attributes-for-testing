@@ -69,8 +69,8 @@ body {
   background-color: var(--gray-light);
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-size-2);
+  min-width: 350px;
   max-width: 500px;
-  min-width: 300px;
   padding: var(--space-2);
 }
 
@@ -110,7 +110,7 @@ header {
 
 .title {
   color: var(--black);
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-4);
 }
 
 .info {
@@ -130,8 +130,7 @@ fieldset {
 /* buttons */
 .buttons {
   display: flex;
-  flex-direction: column;
-  margin: var(--space-2) 0 0 0;
+  margin-top: var(--space-2);
 }
 
 button {
@@ -140,7 +139,7 @@ button {
   color: var(--white);
   cursor: pointer;
   padding: var(--space-1) var(--space-2);
-  width: 100%;
+  width: 50%;
 }
 
 button:focus {
@@ -150,7 +149,7 @@ button:focus {
 .show-attributes {
   background-color: var(--green-dark);
   border: var(--border-2) var(--green-dark);
-  margin-bottom: var(--space-1);
+  margin-right: var(--space-1);
 }
 
 .show-attributes:hover {
@@ -189,20 +188,4 @@ code {
   font-family: monospace;
   font-size: small;
   padding: var(--space-half) var(--space-1);
-}
-
-/* breakpoint - SM */
-@media screen and (min-width: 480px) {
-  .title {
-    font-size: var(--font-size-4);
-  }
-
-  .buttons {
-    flex-direction: row;
-  }
-  
-  .show-attributes {
-    margin-bottom: 0;
-    margin-right: var(--space-1);
-  }
 }
