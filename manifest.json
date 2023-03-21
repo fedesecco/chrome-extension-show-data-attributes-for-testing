@@ -23,10 +23,9 @@
 		{
 			"matches": ["<all_urls>"],
 			"css": ["/popup/attributes-on-page.css"],
-			"js": ["/scripts/remove-attributes.js", "/scripts/show-attributes.js"]
+			"js": ["/scripts/remove-attributes.js", "/scripts/add-attributes.js"]
 		}
   ],
   "permissions": ["activeTab", "scripting"],
   "update_url": "https://clients2.google.com/service/update2/crx"
-
 }
