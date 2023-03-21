@@ -35,6 +35,11 @@ Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types)
 
 - badge state: <https://developer.chrome.com/docs/extensions/mv3/user_interface/#badge>
 - info: <https://developer.chrome.com/docs/extensions/mv3/user_interface/>
+- show number of attributes in badge?
+- CHROME STORAGE:
+  - change badge icon in toolbar based on show / hide
+  - keep the state for badge and for header image in storage
+  - user clicks show, then clicks outside and closes the popup, kee the state in storage
 
 ## `TODO - exercise, create 3 new extensions in new repos`
 
