@@ -1,10 +1,15 @@
+// Attributes to look for on the page
+const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
+
+// Constants
 const ATTRIBUTE_BACKGROUND_CLASS = 'attribute-background'
 
-const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
-const selectAllDataAttributes = document.querySelectorAll(dataAttributes)
+// Get elements on page
+const allDataAttributes = document.querySelectorAll(dataAttributes)
 
-// Loop over all elements with data attributes and create an "attribute-box" element for each one
-selectAllDataAttributes.forEach((data) => {
+// === DO STUFF
+// Loop over all elements with data attributes and create "attribute box" for each one
+allDataAttributes.forEach((data) => {
   const textDataCy = data.getAttribute('data-cy')
   const textDataTest = data.getAttribute('data-test')
   const textDataTestId = data.getAttribute('data-testid')
@@ -16,7 +21,7 @@ selectAllDataAttributes.forEach((data) => {
     textDataCy || textDataTest || textDataTestId || textDataTestIdWithDash || textDataTesting || textDataQa
 
   const attributeBox = `<div class="attribute-box">${textInBox}</div>`
-  const elements = ['BUTTON', 'INPUT', 'SELECT', 'SPAN', 'TEXTAREA']
+  const elements = ['BUTTON', 'DIV', 'INPUT', 'P', 'SELECT', 'SPAN', 'TEXTAREA']
 
   data.style.position = 'relative'
   data.parentElement.style.position = 'relative'

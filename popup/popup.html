@@ -8,9 +8,8 @@
     <meta name="description" content="Browser Extension: Show data attributes on your page for easier testing.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="popup.css">
 </head>
-<link rel="stylesheet" href="popup.css">
 
 <body>
     <div class="container">
@@ -18,8 +17,7 @@
             <div class="content">
                 <header>
                     <div>
-                        <img src="/img/ninja-hidden.svg" width="64px" alt="img-ninja" class="img-ninja"
-                            id="img-ninja" />
+                        <img src="/img/ninja-hidden.svg" width="64px" alt="img-ninja" class="img-ninja" id="img-ninja" />
                     </div>
                     <div>
                         <h1 id="title" class="title">
@@ -38,26 +36,22 @@
                         </div>
 
                         <div>
-                            <input type="checkbox" name="attribute-data-test" id="attribute-data-test" checked
-                                disabled />
+                            <input type="checkbox" name="attribute-data-test" id="attribute-data-test" checked disabled />
                             <label for="attribute-data-test">data-test</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="attribute-data-testid" id="attribute-data-testid" checked
-                                disabled />
+                            <input type="checkbox" name="attribute-data-testid" id="attribute-data-testid" checked disabled />
                             <label for="attribute-data-testid">data-testid</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="attribute-data-test-id" id="attribute-data-test-id" checked
-                                disabled />
+                            <input type="checkbox" name="attribute-data-test-id" id="attribute-data-test-id" checked disabled />
                             <label for="attribute-data-test-id">data-test-id</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="attribute-data-testing" id="attribute-data-testing" checked
-                                disabled />
+                            <input type="checkbox" name="attribute-data-testing" id="attribute-data-testing" checked disabled />
                             <label for="attribute-data-testing">data-testing</label>
                         </div>
 
@@ -68,10 +62,10 @@
                     </div>
                 </fieldset>
             </div>
-            
+
             <div class="buttons">
-                <button id="show" class="show-attributes">SHOW</button>
-                <button id="remove" class="remove-attributes">REMOVE</button>
+                <button id="add" class="add-attributes">show</button>
+                <button id="remove" class="remove-attributes">hide</button>
             </div>
         </main>
 

@@ -1,77 +1,80 @@
-// Constants
-const ID_BUTTON_SHOW = 'show'
-const ID_BUTTON_REMOVE = 'remove'
-const ID_ATTRIBUTES_COUNTER = 'attributes-counter'
-const IMG_NINJA = 'img-ninja'
-
-// Texts
-const textNumberOfAttributes = '0'
-const textRemove = 'REMOVE'
-const textRemoving = 'Removing...'
-const textNoAttributesFound = 'No attributes found.'
-const textShow = 'SHOW'
-const textShowing = 'Showing...'
-
-// Attributes set
+// Attributes to look for on the page
 const dataAttributes = '[data-cy], [data-test], [data-testid], [data-test-id], [data-testing], [data-qa]'
 
+// Constants
+const BUTTON_ADD_ID = 'add'
+const BUTTON_REMOVE_ID = 'remove'
+const ATTRIBUTES_COUNTER_ID = 'attributes-counter'
+const IMG_NINJA = 'img-ninja'
+const LOADING_TIME = 1000
+const ZERO_ATTRIBUTES = 0
+
 // Get elements on page
-const elButtonShow = document.getElementById(ID_BUTTON_SHOW)
-const elButtonRemove = document.getElementById(ID_BUTTON_REMOVE)
+const allDataAttributes = document.querySelectorAll(dataAttributes)
 
-const attributesCounter = document.getElementById(ID_ATTRIBUTES_COUNTER)
-attributesCounter.innerHTML = textNumberOfAttributes
+const elHeaderImg = document.getElementById(IMG_NINJA)
+const elAttributesCounter = document.getElementById(ATTRIBUTES_COUNTER_ID)
+const elButtonAdd = document.getElementById(BUTTON_ADD_ID)
+const elButtonRemove = document.getElementById(BUTTON_REMOVE_ID)
 
-// Get image
-const getImg = document.getElementById(IMG_NINJA)
+// Texts
+const textNoAttributesFound = 'No attributes found.'
+const textAdd = 'show'
+const textRemove = 'hide'
+const textLoading = 'Loading...'
+
+// === DO STUFF
+// Misc
+elAttributesCounter.innerHTML = ZERO_ATTRIBUTES
 
 const changeImgToVisible = () => {
-  getImg.src = '/img/ninja-visible.svg'
+  elHeaderImg.src = '/img/ninja-visible.svg'
 }
 
 const changeImgToHidden = () => {
-  getImg.src = '/img/ninja-hidden.svg'
+  elHeaderImg.src = '/img/ninja-hidden.svg'
 }
 
 // Attributes on page
-const numberOfAttributesFound = () => document.querySelectorAll(dataAttributes).length
+const numberOfAttributesFound = () => allDataAttributes.length
 
-// Show attributes
-const showAttributesOnPage = () => {
+// Add attributes
+const addAttributesToPage = () => {
   chrome.scripting.insertCSS({ files: ['attributes-on-page.css'] })
 
-  chrome.scripting.executeScript(null, { files: ['../scripts/show-attributes.js'] })
+  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] }) // remove attributes if they exist
+  chrome.scripting.executeScript(null, { files: ['../scripts/add-attributes.js'] }) // adds attributes
 
   chrome.scripting.executeScript(null, { code: `(${numberOfAttributesFound})()` }, (results) => {
     if (results && results[0] > 0) {
-      attributesCounter.innerHTML = results[0]
+      elAttributesCounter.innerHTML = results[0]
     } else {
-      attributesCounter.innerHTML = textNoAttributesFound
+      elAttributesCounter.innerHTML = textNoAttributesFound
     }
   })
 
-  elButtonShow.innerHTML = textShowing // pretend loader
+  elButtonAdd.innerHTML = textLoading // pretend loader
   setTimeout(() => {
-    elButtonShow.innerHTML = textShow
-  }, 500)
+    elButtonAdd.innerHTML = textAdd
+  }, LOADING_TIME)
 }
 
 // Remove attributes
 const removeAttributesFromPage = () => {
-  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] })
+  chrome.scripting.executeScript(null, { files: ['../scripts/hide-attributes.js'] }) // remove attributes if they exist
 
-  attributesCounter.innerHTML = textNumberOfAttributes
+  elAttributesCounter.innerHTML = ZERO_ATTRIBUTES
 
-  elButtonRemove.innerHTML = textRemoving // pretend loader
+  elButtonRemove.innerHTML = textLoading // pretend loader
   setTimeout(() => {
     elButtonRemove.innerHTML = textRemove
-  }, 500)
+  }, LOADING_TIME)
 }
 
 // Handle buttons
-elButtonShow.addEventListener('click', () => {
+elButtonAdd.addEventListener('click', () => {
   changeImgToVisible()
-  showAttributesOnPage()
+  addAttributesToPage()
 })
 
 elButtonRemove.addEventListener('click', () => {

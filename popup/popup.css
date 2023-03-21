@@ -138,6 +138,7 @@ button {
   color: var(--white);
   cursor: pointer;
   padding: var(--space-1) var(--space-2);
+  text-transform: uppercase;
   width: 50%;
 }
 
@@ -145,13 +146,13 @@ button:focus {
   outline: none;
 }
 
-.show-attributes {
+.add-attributes {
   background-color: var(--green-dark);
   border: var(--border-2) var(--green-dark);
   margin-right: var(--space-1);
 }
 
-.show-attributes:hover {
+.add-attributes:hover {
   background-color: var(--green-light);
   border-color: var(--green-light);
 }
