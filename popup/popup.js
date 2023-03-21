@@ -61,7 +61,7 @@ const addAttributesToPage = () => {
 
 // Remove attributes
 const removeAttributesFromPage = () => {
-  chrome.scripting.executeScript(null, { files: ['../scripts/hide-attributes.js'] }) // remove attributes if they exist
+  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] }) // remove attributes if they exist
 
   elAttributesCounter.innerHTML = ZERO_ATTRIBUTES
 
