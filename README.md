@@ -80,9 +80,3 @@ Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types)
 - add box to COPY all attributes + values AND copy only values
 - show below attributes with `null` missing the value `""`
 - add TEST page
-
-## `TODO - Learn`
-
-- test other extensions
-- download + unpack to learn from code
-- implement what is needed
