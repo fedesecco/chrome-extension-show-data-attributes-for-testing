@@ -42,8 +42,8 @@ const numberOfAttributesFound = () => allDataAttributes.length
 const addAttributesToPage = () => {
   chrome.scripting.insertCSS({ files: ['attributes-on-page.css'] })
 
-  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] }) // remove attributes if they exist
-  chrome.scripting.executeScript(null, { files: ['../scripts/add-attributes.js'] }) // adds attributes
+  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] })
+  chrome.scripting.executeScript(null, { files: ['../scripts/add-attributes.js'] })
 
   chrome.scripting.executeScript(null, { code: `(${numberOfAttributesFound})()` }, (results) => {
     if (results && results[0] > 0) {
@@ -61,7 +61,7 @@ const addAttributesToPage = () => {
 
 // Remove attributes
 const removeAttributesFromPage = () => {
-  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] }) // remove attributes if they exist
+  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] })
 
   elAttributesCounter.innerHTML = ZERO_ATTRIBUTES
 
