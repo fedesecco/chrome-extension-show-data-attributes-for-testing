@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "3.0.0", 
+  "version": "3.0.0",
   "name": "Show data attributes for testing",
   "description": "Show data attributes on your page for easier testing.",
   "author": "https://github.com/krsiakdaniel",
@@ -20,10 +20,10 @@
     "128": "img/ninja-hidden-128.png"
   },
   "content_scripts": [
-		{
-			"js": ["/scripts/add-attributes.js", "/scripts/remove-attributes.js"],
-			"matches": ["<all_urls>"]
-		}
+    {
+      "js": ["/scripts/add-attributes.js", "/scripts/remove-attributes.js"],
+      "matches": ["<all_urls>"]
+    }
   ],
   "permissions": ["activeTab", "scripting"],
   "update_url": "https://clients2.google.com/service/update2/crx"
