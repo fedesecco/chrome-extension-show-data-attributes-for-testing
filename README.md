@@ -50,6 +50,7 @@ Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types)
 ## `TODO - options page`
 
 - create OPTIONS PAGE: <https://developer.chrome.com/docs/extensions/mv3/options/>
+- HELP page example open after install <extension://nplimhmoanghlebhdiboeellhgmgommi/help.html>
 
 ## `TODO - recreate extension in REACT + with TS`
 

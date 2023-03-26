@@ -67,10 +67,10 @@ ul {
 
 body {
   background-color: var(--gray-light);
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--font-size-2);
   padding: var(--space-2);
   width: 480px;
+  font-size: var(--font-size-2);
+  font-family: 'Poppins', sans-serif;
 }
 
 a,
@@ -93,9 +93,9 @@ a:focus {
 
 /* content */
 .container {
-  background-color: var(--white);
-  border-radius: var(--radius-1);
   box-shadow: var(--shadow-1);
+  border-radius: var(--radius-1);
+  background-color: var(--white);
   padding: var(--space-2);
 }
 
@@ -120,10 +120,10 @@ header {
 
 /* form */
 fieldset {
-  background-color: var(--gray-light);
+  margin: var(--space-2) 0 0 0;
   border: var(--border-1-dashed) var(--gray-dark);
   border-radius: var(--radius-1);
-  margin: var(--space-2) 0 0 0;
+  background-color: var(--gray-light);
   padding: var(--space-half) var(--space-2) var(--space-1);
 }
 
@@ -134,13 +134,13 @@ fieldset {
 }
 
 button {
+  cursor: pointer;
   border: none;
   border-radius: var(--radius-0);
-  color: var(--white);
-  cursor: pointer;
   padding: var(--space-1) var(--space-2);
-  text-transform: uppercase;
   width: 50%;
+  color: var(--white);
+  text-transform: uppercase;
 }
 
 button:focus {
@@ -148,32 +148,32 @@ button:focus {
 }
 
 .add-attributes {
-  background-color: var(--green-dark);
-  border: var(--border-2) var(--green-dark);
   margin-right: var(--space-1);
+  border: var(--border-2) var(--green-dark);
+  background-color: var(--green-dark);
 }
 
 .add-attributes:hover {
-  background-color: var(--green-light);
   border-color: var(--green-light);
+  background-color: var(--green-light);
 }
 
 .remove-attributes {
-  background-color: var(--red-dark);
   border: var(--border-2) var(--red-dark);
+  background-color: var(--red-dark);
 }
 
 .remove-attributes:hover {
-  background-color: var(--red-light);
   border-color: var(--red-light);
+  background-color: var(--red-light);
 }
 
 /* footer  */
 footer {
-  align-items: center;
   display: flex;
-  font-size: var(--font-size-1);
+  align-items: center;
   margin-top: var(--space-2);
+  font-size: var(--font-size-1);
 }
 
 .logo-developer {
@@ -182,11 +182,11 @@ footer {
 
 /* misc */
 code {
-  background: var(--gray-light);
   border: var(--border-1) var(--gray-dark);
   border-radius: var(--radius-0);
-  color: var(--black);
-  font-family: monospace;
-  font-size: small;
+  background: var(--gray-light);
   padding: var(--space-half) var(--space-1);
+  color: var(--black);
+  font-size: small;
+  font-family: monospace;
 }
