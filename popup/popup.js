@@ -6,7 +6,6 @@ const BUTTON_ADD_ID = 'add'
 const BUTTON_REMOVE_ID = 'remove'
 const ATTRIBUTES_COUNTER_ID = 'attributes-counter'
 const IMG_NINJA = 'img-ninja'
-const LOADING_TIME = 1000
 const ZERO_ATTRIBUTES = 0
 
 // Get elements on page
@@ -21,7 +20,6 @@ const elButtonRemove = document.getElementById(BUTTON_REMOVE_ID)
 const textNoAttributesFound = 'No attributes found.'
 const textAdd = 'show'
 const textRemove = 'hide'
-const textLoading = 'Loading...'
 
 // === DO STUFF
 // Misc
@@ -52,11 +50,6 @@ const addAttributesToPage = () => {
       elAttributesCounter.innerHTML = textNoAttributesFound
     }
   })
-
-  elButtonAdd.innerHTML = textLoading // pretend loader
-  setTimeout(() => {
-    elButtonAdd.innerHTML = textAdd
-  }, LOADING_TIME)
 }
 
 // Remove attributes
@@ -64,11 +57,6 @@ const removeAttributesFromPage = () => {
   chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] })
 
   elAttributesCounter.innerHTML = ZERO_ATTRIBUTES
-
-  elButtonRemove.innerHTML = textLoading // pretend loader
-  setTimeout(() => {
-    elButtonRemove.innerHTML = textRemove
-  }, LOADING_TIME)
 }
 
 // Handle buttons
