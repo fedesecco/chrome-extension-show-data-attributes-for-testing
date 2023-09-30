@@ -31,6 +31,30 @@ Icons used [Ninja pack](https://www.flaticon.com/packs/ninja-11)
 
 Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types) to take advantage of auto-completion for the Chrome API in Manifest version 3.
 
+---
+
+Misc TODO stuff.
+
+## `TODO - General stuff`
+
+- [ ] allow COPY text from element on hover
+- [ ] add box to COPY all attributes + values AND copy only values
+- [ ] redesign the look and update CSS
+- [ ] show below attributes with `null` missing the value `""`
+- [ ] add TEST page
+- [ ] update JavaScript with regex
+- [ ]
+
+## `TODO - Chrome MANIFEST version update`
+
+- **upgrade MANIFEST to version 3**: <https://developer.chrome.com/docs/extensions/mv3/intro/>
+- **MIGRATION**: <https://developer.chrome.com/docs/extensions/mv3/mv3-migration/>
+- read: <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#register-listeners>
+- local storage <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#persist-states>
+- setTimeout = to timers Alarm <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#convert-timers>
+- <https://developer.chrome.com/docs/extensions/reference/action/#badge>
+- <https://developer.chrome.com/docs/extensions/reference/action/#injecting-a-content-script-on-click>
+
 ## `TODO - UI design`
 
 - badge state: <https://developer.chrome.com/docs/extensions/mv3/user_interface/#badge>
@@ -41,7 +65,7 @@ Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types)
   - keep the state for badge and for header image in storage
   - user clicks show, then clicks outside and closes the popup, kee the state in storage
 
-## `TODO - exercise, create 3 new extensions in new repos`
+## `TODO - test extensions in new repo`
 
 - <https://developer.chrome.com/docs/extensions/mv3/getstarted/extensions-101/>
 - improve content structure
@@ -62,22 +86,3 @@ Using **npm package** [chrome-types](https://www.npmjs.com/package/chrome-types)
 
 - <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#update_url>
 - <https://developer.chrome.com/docs/extensions/mv3/linux_hosting/#testing>
-
-## `TODO - Chrome MANIFEST version update`
-
-- **upgrade MANIFEST to version 3**: <https://developer.chrome.com/docs/extensions/mv3/intro/>
-- **MIGRATION**: <https://developer.chrome.com/docs/extensions/mv3/mv3-migration/>
-- read: <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#register-listeners>
-- local storage <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#persist-states>
-- setTimeout = to timers Alarm <https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#convert-timers>
-- <https://developer.chrome.com/docs/extensions/reference/action/#badge>
-- <https://developer.chrome.com/docs/extensions/reference/action/#injecting-a-content-script-on-click>
-
-## `TODO - General stuff`
-
-- update JavaScript with regex
-- redesign the look and update CSS
-- allow COPY from element on hover
-- add box to COPY all attributes + values AND copy only values
-- show below attributes with `null` missing the value `""`
-- add TEST page
