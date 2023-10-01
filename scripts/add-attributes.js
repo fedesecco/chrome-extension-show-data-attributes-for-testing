@@ -13,12 +13,19 @@ allDataAttributes.forEach((data) => {
   const textDataCy = data.getAttribute('data-cy')
   const textDataTest = data.getAttribute('data-test')
   const textDataTestId = data.getAttribute('data-testid')
+  const textDataTestID = data.getAttribute('data-testId')
   const textDataTestIdWithDash = data.getAttribute('data-test-id')
   const textDataTesting = data.getAttribute('data-testing')
   const textDataQa = data.getAttribute('data-qa')
 
   const textInBox =
-    textDataCy || textDataTest || textDataTestId || textDataTestIdWithDash || textDataTesting || textDataQa
+    textDataCy ||
+    textDataTest ||
+    textDataTestId ||
+    textDataTestID ||
+    textDataTestIdWithDash ||
+    textDataTesting ||
+    textDataQa
 
   const attributeBox = `<div class="attribute-box">${textInBox}</div>`
   const elements = ['BUTTON', 'DIV', 'INPUT', 'P', 'SELECT', 'SPAN', 'TEXTAREA']
@@ -29,8 +36,14 @@ allDataAttributes.forEach((data) => {
 
   if (elements.includes(data.tagName)) {
     data.insertAdjacentHTML('afterend', attributeBox)
+    data.addEventListener('click', function () {
+      navigator.clipboard.writeText(textInBox)
+    })
   } else {
     data.insertAdjacentHTML('afterbegin', attributeBox)
+    data.addEventListener('click', function () {
+      navigator.clipboard.writeText(textInBox)
+    })
   }
 })
 

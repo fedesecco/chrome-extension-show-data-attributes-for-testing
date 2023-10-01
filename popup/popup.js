@@ -38,17 +38,20 @@ const numberOfAttributesFound = () => allDataAttributes.length
 
 // Add attributes
 const addAttributesToPage = () => {
-  chrome.scripting.insertCSS({ files: ['attributes-on-page.css'] })
+  chrome.scripting.insertCSS({ target: { tabId: 0, allFrames: true }, files: ['./attributes-on-page.css'] })
 
-  chrome.scripting.executeScript(null, { files: ['../scripts/remove-attributes.js'] })
-  chrome.scripting.executeScript(null, { files: ['../scripts/add-attributes.js'] })
+  chrome.scripting.executeScript({ target: { tabId: 0, allFrames: true }, files: ['../scripts/remove-attributes.js'] })
+  chrome.scripting.executeScript({ target: { tabId: 0, allFrames: true }, files: ['../scripts/add-attributes.js'] })
 
-  chrome.scripting.executeScript(null, { code: `(${numberOfAttributesFound})()` }, (results) => {
-    if (results && results[0] > 0) {
-      elAttributesCounter.innerHTML = results[0]
-    } else {
-      elAttributesCounter.innerHTML = textNoAttributesFound
-    }
+  chrome.scripting.executeScript({
+    target: { tabId: 0, allFrames: true },
+    func: (results) => {
+      if (results && results[0] > 0) {
+        elAttributesCounter.innerHTML = results[0]
+      } else {
+        elAttributesCounter.innerHTML = textNoAttributesFound
+      }
+    },
   })
 }
 
