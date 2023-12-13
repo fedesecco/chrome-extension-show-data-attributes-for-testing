@@ -1,4 +1,4 @@
-const found = document.getElementById("found")
+const found = document.getElementById('found')
 
 const tAttrsHidden = 'Attributes: 0'
 const tHide = 'HIDE'
@@ -9,46 +9,47 @@ const tShowing = 'Showing...'
 
 found.innerHTML = tAttrsHidden
 
-const getImg = document.getElementById("img-ninja")
+const getImg = document.getElementById('img-ninja')
 
-const changeImgToShow = () => getImg.src="/img/ninja-show.svg"
-document.getElementById("show").addEventListener('click', changeImgToShow)
+const changeImgToShow = () => (getImg.src = '/img/ninja-show.svg')
+document.getElementById('show').addEventListener('click', changeImgToShow)
 
-const changeImgToHide = () => getImg.src="/img/ninja-hide.svg"
-document.getElementById("hide").addEventListener('click', changeImgToHide)
+const changeImgToHide = () => (getImg.src = '/img/ninja-hide.svg')
+document.getElementById('hide').addEventListener('click', changeImgToHide)
 
-
-const numberOfAttrsFound = () => document.querySelectorAll('[data-cy], [data-testid]').length
+const numberOfAttrsFound = () => document.querySelectorAll('[data-testid]').length
 
 const show = () => {
-    chrome.tabs.insertCSS({file:"css/attributes.css"})
-    chrome.tabs.executeScript(null, {file: '/js/hide.js'})
-    chrome.tabs.executeScript(null, {file: '/js/show.js'})
+    chrome.tabs.insertCSS({ file: 'css/attributes.css' })
+    chrome.tabs.executeScript(null, { file: '/js/hide.js' })
+    chrome.tabs.executeScript(null, { file: '/js/show.js' })
 
-    const btnShow = document.getElementById("show")
+    const btnShow = document.getElementById('show')
     btnShow.innerHTML = tShowing
-    setTimeout(() => {btnShow.innerHTML = tShow}, 500)
+    setTimeout(() => {
+        btnShow.innerHTML = tShow
+    }, 500)
 
-    chrome.tabs.executeScript(null, {code: `(${numberOfAttrsFound})()`}, (results) => {
+    chrome.tabs.executeScript(null, { code: `(${numberOfAttrsFound})()` }, (results) => {
         if (results && results[0] > 0) {
             found.innerHTML = `Attributes: ${results[0]}`
-        }
-        else {
+        } else {
             found.innerHTML = tNoAttrsFound
         }
-     })
+    })
     return false
 }
 
 const hide = () => {
-    chrome.tabs.executeScript(null, {file: '/js/hide.js'})
+    chrome.tabs.executeScript(null, { file: '/js/hide.js' })
     found.innerHTML = tAttrsHidden
 
-    const btnHide = document.getElementById("hide")
+    const btnHide = document.getElementById('hide')
     btnHide.innerHTML = tHiding
-    setTimeout(() => {btnHide.innerHTML = tHide}, 500)
+    setTimeout(() => {
+        btnHide.innerHTML = tHide
+    }, 500)
 }
 
 document.getElementById('show').addEventListener('click', show)
 document.getElementById('hide').addEventListener('click', hide)
-
